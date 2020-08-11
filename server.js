@@ -6,6 +6,9 @@ const cookieParser = require("cookie-parser");
 const session = require("express-session");
 const passport = require("passport");
 
+const yelp = require('./public/src/sample')
+
+
 const app = express();
 
 require("dotenv").config();
@@ -25,9 +28,10 @@ app.use(logger("dev"));
 // app.use(passport.initialize());
 // app.use(passport.session());
 
+
 app.set("views", "views");
 app.set("view engine", "ejs");
-// app.use(express.static("public"));
+app.use(express.static("public"));
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {

@@ -34,6 +34,7 @@
     "nodemon": "^2.0.4",
     "passport": "^0.4.1",
     "passport-local": "^1.0.0",
-    "pg-promise": "^10.5.8"
+    "pg-promise": "^10.5.8",
+    "yelp-fusion": "^3.0.0"
   }
 }
