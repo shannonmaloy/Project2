@@ -10,22 +10,17 @@ class User {
   }
   //Static Methods
   static findByUserName(username) {
-    return db
-      .oneOrNone("SELECT * FROM users WHERE username = $1", username)
-      .then((user) => {
-        if (user) return new this(user);
-        throw new Error("no user found");
-      });
+    return db.oneOrNone("SELECT * FROM users WHERE username = $1", username);
+    // .then((user) => {
+    //   if (user) return new this(user);
+    //   throw new Error("no user found - User.js 17");
+    // });
   }
 
-  static getById(id) {
-    return db
-      .oneOrNone("SELECT * FROM users WHERE id = $1", id)
-      .then((user) => {
-        if (user) return new this(user);
-        throw new Error("no user found");
-      });
+  static findByUserName(username) {
+    return db.oneOrNone("SELECT * FROM users WHERE username = $1", username);
   }
+
   //Instance Methods
   save() {
     return db
@@ -37,14 +32,6 @@ class User {
         this
       )
       .then((savedUser) => Object.assign(this, savedUser));
-  }
-
-  findUserTodos() {
-    return db
-      .manyOrNone("SELECT * FROM todos WHERE user_id = $1", this.id)
-      .then((todos) => {
-        return todos.map((todo) => new Animal(todo));
-      });
   }
 }
 

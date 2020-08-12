@@ -1,9 +1,9 @@
 const express = require("express");
-const userRouter = express.Router();
+const authRouter = express.Router();
+// const userRouter = express.Router();
+const authHelpers = require("../services/auth/auth-helpers");
 const passport = require("../services/auth/local");
 // const usersController = require("../controllers/users-controller");
-const authHelpers = require("../services/auth/auth-helpers");
-const authRouter = express.Router();
 
 // userRouter.get("/", authHelpers.loginRequired, usersController.index);
 // userRouter.post("/", usersController.create);
