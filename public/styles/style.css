@@ -1,21 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap');
+
+@font-face {
+  font-family: 'titleLogo';
+  src: url('./Alltherollpersonaluse-DOJE0.otf'); /* IE9 Compat Modes */
+  src: url('./Alltherollpersonaluse-DOJE0.otf') format('embedded-opentype'), /* IE6-IE8 */
+       url('./Alltherollpersonaluse-DOJE0.otf') format('woff2'), /* Super Modern Browsers */
+       url('./Alltherollpersonaluse-DOJE0.otf') format('woff'), /* Pretty Modern Browsers */
+       url('./Alltherollpersonaluse-DOJE0.otf')  format('truetype'), /* Safari, Android, iOS */
+       url('./Alltherollpersonaluse-DOJE0.otf') format('svg'); /* Legacy iOS */      
+}
+
+
 body {
-  min-height: 100vh;
+  font-family: 'Open Sans';
+  background-color: #d66354;
   display: flex;
+  min-height: 100vh;
   flex-direction: column;
-  font-family: sans-serif;
-  align-items: center;
-  justify-content: center;
+}
 }
 
 .appContainer {
   display: flex;
+  background-color: whitesmoke;
   flex-direction: column;
   border: 2px black solid;
   border-radius: 10px;
-  width: 700px;
-  min-height: 500px;
-  margin: 20px auto;
+  width: 800px;
+  min-height: 700px;
+  margin: 10px auto;
 }
+
+
+.headingContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  /* border-bottom: 2px black solid; */
+  padding: 5px;
+}
+
+.titleLogo{
+  display: flex;
+  font-family: 'titleLogo';
+  font-size: 6vw;
+  border: 2px red solid;
+  align-items: center;
+}
+
+.navBar{
+  display: flex;
+  font-family: 'Open Sans', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  flex-direction: row;
+  font-size: 1.5vw;
+  font-weight: 900;
+  border: 2px red solid;
+}
+
+.nav {
+  display: flex;
+  flex-direction: row;
+  justify-items: end;
+  list-style: none;
+  
+  padding: 0px;
+  justify-content: end;
+  border: 2px yellow solid;
+}
+
+.nav a {
+  margin: 5px;
+  text-decoration: none;
+  color:inherit;
+}
+
+
+
+
 
 .formContainer {
   display: flex;
@@ -33,26 +94,8 @@ input {
   margin: 5px;
 }
 
-#headingContainer {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  border-bottom: 2px black solid;
-  padding: 5px;
-}
 
-.heading {
-  display: flex;
-  flex-direction: row;
-  justify-items: end;
-  list-style: none;
-  padding: 0px;
-  justify-content: end;
-}
 
-.nav a {
-  margin: 5px;
-}
 
 #mainContainer {
   display: flex;
