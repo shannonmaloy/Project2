@@ -7,6 +7,23 @@
     <link rel="stylesheet" type="text/css" href="/styles/reset.css" />
     <link rel="stylesheet" type="text/css" href="/styles/style.css" />
   </head>
-  <body>
 
+  <body class="holy-grail">
+    <header>
+      <div class='titleLogo'>
+        (What's For Dinner?)
+        </div>
+        <div class="navBar">
+          <ul class='nav'>
+          <% if (data.user != undefined) { %> <li class='home'>Welcome, <%=data.user.name%> | </li>  <% }; %>
+            <li class='home'><a href="/">Home |</a></li>
+            <li class='login'><a href="/auth/login">Login</a></li>
+            <li class='logout'><a href="/auth/logout">Logout</a></li>
+          </ul>
+        </div>
+    </header>
+  
+    <div class="holy-grail-body">
+  
+      <section class="holy-grail-content">
     

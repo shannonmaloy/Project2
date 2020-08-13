@@ -11,16 +11,78 @@
 }
 
 
-body {
-  font-family: 'Open Sans';
-  background-color: #d66354;
+* {
+				box-sizing: border-box;
+			}
+			html, body {
+				margin: 0;
+				padding: 0;
+				font-family: 'Open Sans',sans-serif;
+				font-size: 1.1em;
+				text-align: center;
+				color: #FFF;
+			}
+			.holy-grail header,
+			.holy-grail footer,
+			.hg-sidebar,
+			.holy-grail-content {
+				padding: 20px;
+			}
+			.holy-grail header,
+			.holy-grail footer {
+        background: #d66354;
+        
+			}
+			.hg-sidebar {
+				background: gray;
+			}
+			.holy-grail-content {
+				color: rgb(0, 0, 0);
+			}
+
+			/**
+			 * Flex things:
+			 * — Mobile first
+			 * — Responsive
+			 */
+			.holy-grail {
+				min-height: 100vh;
+			}
+			.holy-grail,
+			.holy-grail-body {
+				display: flex;
+				flex: 1 1 auto;
+				flex-direction: column;
+			}
+			.holy-grail-content {
+				flex: 1 1 auto;
+			}
+
+/* My modification being here */
+
+.holy-grail header {
   display: flex;
-  min-height: 100vh;
-  flex-direction: column;
-}
+  flex-direction: row;
+  justify-content: space-between;
+  border-bottom: 4px black solid;
+  padding: 5px;
 }
 
-.appContainer {
+.holy-grail .titleLogo{
+  display: flex;
+  font-family: 'titleLogo';
+  font-size: 6vw;
+  align-items: center;
+  margin-left: 15px;
+  text-shadow: 5px 3px 8px #a99999;
+}
+
+.holy-grail-content{
+  display: flex;
+  align-items: center;
+}
+
+ .appContainer {
   display: flex;
   background-color: whitesmoke;
   flex-direction: column;
@@ -32,29 +94,14 @@ body {
 }
 
 
-.headingContainer {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  /* border-bottom: 2px black solid; */
-  padding: 5px;
-}
-
-.titleLogo{
-  display: flex;
-  font-family: 'titleLogo';
-  font-size: 6vw;
-  border: 2px red solid;
-  align-items: center;
-}
-
-.navBar{
+.holy-grail .navBar{
   display: flex;
   font-family: 'Open Sans', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   flex-direction: row;
   font-size: 1.5vw;
   font-weight: 900;
-  border: 2px red solid;
+  margin-right: 15px;
+  
 }
 
 .nav {
@@ -62,46 +109,115 @@ body {
   flex-direction: row;
   justify-items: end;
   list-style: none;
-  
   padding: 0px;
   justify-content: end;
-  border: 2px yellow solid;
+  
 }
 
 .nav a {
   margin: 5px;
   text-decoration: none;
   color:inherit;
+  transition:.5s ease;
+  
 }
 
 
-
-
-
-.formContainer {
+.loginContainer {
   display: flex;
   flex-direction: column;
+  background-color: #d66354;
   border: 2px black solid;
-  border-radius: 10px;
+  border-radius: 5px;
   width: 500px;
-  min-height: 300px;
+  align-items: center;
   margin: 20px auto;
   padding: 10px;
+  box-shadow: 4px 6px 6px 2px #b3aaaa;
 }
 
-input {
-  padding: 5px;
-  margin: 5px;
+.loginContainer input {
+  padding: 8px;
+  margin: 8px;
+  border-radius: 5px;
+  font-family: 'Open Sans';
+  font-weight: 600;
+  
 }
 
-
-
-
-#mainContainer {
+.registerContainer {
   display: flex;
   flex-direction: column;
-  justify-items: center;
-  align-content: center;
-  padding: 5px;
-  margin: 0 auto;
+  background-color: #d66354;
+  border: 2px black solid;
+  border-radius: 5px;
+  width: 600px;
+  align-items: center;
+  margin: 20px auto;
+  padding: 10px;
+  box-shadow: 4px 6px 6px 2px #b3aaaa;
+}
+
+.registerContainer input {
+  padding: 8px;
+  margin: 8px;
+  border-radius: 5px;
+  font-family: 'Open Sans';
+  font-weight: 600;
+}
+
+.registerTop {
+  display: flex;
+  flex-direction: row ;
+  width: 100%;
+}
+
+.registerFull {
+  display: flex;
+  flex-direction: column ;
+  width: 100%;  
+}
+
+.registerBottom {
+  display: flex;
+  flex-direction: row ;
+  width: 100%;  
+}
+
+.registerTop input{
+  display: flex;
+  flex-direction: row ;
+  width: 50%;
+}
+
+
+.registerBottom input{
+  display: flex;
+  flex-direction: row ;
+  width: 33.33%;
+}
+
+.registerContainer input[type="submit"]{
+  width: 35%;
+}
+
+
+.holy-grail footer{
+  font-family: 'titleLogo';
+    font-size: 2.0em;
+    text-shadow: 5px 3px 8px #a99999;
+    color: white;
+  
+}
+
+@media (min-width: 768px) {
+  .holy-grail-sidebar-1 {
+    order: -1;
+  }
+  .holy-grail-body {
+    flex-direction: row;
+  }
+  .hg-sidebar {
+    flex: 0 0 260px;
+  }
 }

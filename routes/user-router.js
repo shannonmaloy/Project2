@@ -10,8 +10,15 @@ userRouter.get("/", authHelpers.loginRequired, usersController.index);
 userRouter.post("/", usersController.create);
 
 userRouter.get("/register", authHelpers.loginRedirect, (req, res) => {
-  res.render("auth/register");
-});
+  res.render("auth/register", {
+    appName: "What's For Dinner",
+    message: "Put a user profile page on this route",
+    data: {
+      user: req.user,
+      params: req.params,
+    }
+  })
+}),
 
 userRouter.get("/profile", usersController.index);
 

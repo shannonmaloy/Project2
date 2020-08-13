@@ -1,12 +1,28 @@
 <%- include('../partials/boilerplate') %>
+<style>
+.logo {
+  font-family: 'titleLogo';
+  font-size: 2.7em;
+  text-shadow: 5px 3px 8px #a99999;
+  color: white;
+  margin: 30px 0;
+}
+a {
+  color:inherit;
+}
+</style>
 
-<div class="formContainer">
+<div class="loginContainer">
+  <p class='logo'>Welcome to (What's For Dinner)</p>
   <form method="POST" action="/auth/login">
     <input name="username" type="text" placeholder="username" required />
     <input name="password" type="password" placeholder="password" required />
     <input type="submit" value="Log in!" />
   </form>
-  <p><a href="/user/register">Sign Up</a></p>
+  <p>Not a Member? <a href="/user/register">Sign Up Here</a></p>
 </div>
+
+
+
 
 <%- include('../partials/end') %>

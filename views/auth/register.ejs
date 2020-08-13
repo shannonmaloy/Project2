@@ -1,28 +1,43 @@
 <%- include('../partials/boilerplate') %>
-
-<div class="formContainer">
+<style>
+  .logo {
+    font-family: 'titleLogo';
+    font-size: 2.7em;
+    text-shadow: 5px 3px 8px #a99999;
+    color: white;
+    margin: 30px 0;
+  }
+  </style>
+<div class="registerContainer">
+  <p class='logo'>Welcome to (What's For Dinner)</p>
   <form method="POST" action="/user">
-    <input name="username" type="text" placeholder="User Name" required />
-    <input name="email" type="email" placeholder="Email" required />
-    <input name="password" type="password" placeholder="Password" required />
-    <input name="name" type="text" placeholder="Name" required />
-    <input name="address" type="text" placeholder="Street Address" required />
-    <input name="city" type="text" placeholder="City" required />
-    <input
-      name="state"
-      type="text"
-      placeholder="State"
-      required
-      maxlength="2"
-    />
-    <input
-      name="zipCode"
-      type="number"
-      placeholder="Zip Code"
-      required
-      minlength="5"
-      maxlength="5"
-    />
+    <div class='registerTop'>
+        <input name="username" type="text" placeholder="User Name" required />
+        <input name="password" type="password" placeholder="Password" required />
+    </div>
+    <div class='registerFull'>
+        <input name="email" type="email" placeholder="Email" required />
+        <input name="name" type="text" placeholder="Name" required />
+        <input name="address" type="text" placeholder="Street Address" required />
+    </div>
+    <div class='registerBottom'>
+          <input name="city" type="text" placeholder="City" required />
+          <input
+          name="state"
+          type="text"
+          placeholder="State"
+          required
+          maxlength="2"
+          />
+          <input
+            name="zipCode"
+            type="number"
+            placeholder="Zip Code"
+            required
+            minlength="5"
+            maxlength="5"
+          />
+  </div>
     <input type="submit" value="Register!" />
   </form>
 </div>
