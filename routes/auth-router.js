@@ -13,7 +13,14 @@ const passport = require("../services/auth/local");
 // });
 
 authRouter.get("/login", authHelpers.loginRedirect, (req, res) => {
-  res.render("auth/login");
+  res.render("auth/login", {
+    appName: "What's For Dinner",
+    message: "ok",
+    data: {
+      user: req.user,
+      params: req.params,
+    }
+  });
 });
 
 //Passport authenticates the user for us based on the 'local' strategy in services/auth/local.js
@@ -28,7 +35,7 @@ authRouter.post(
 
 authRouter.get("/logout", (req, res) => {
   req.logout();
-  res.redirect("back");
+  res.redirect("/");
 });
 
 module.exports = authRouter;
