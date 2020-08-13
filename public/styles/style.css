@@ -7,7 +7,7 @@ body {
   justify-content: center;
 }
 
-#appContainer {
+.appContainer {
   display: flex;
   flex-direction: column;
   border: 2px black solid;
@@ -61,27 +61,4 @@ input {
   align-content: center;
   padding: 5px;
   margin: 0 auto;
-}
-
-.todo {
-  border: 2px rgb(0, 0, 0) solid;
-  padding: 5px;
-  min-width: 200px;
-}
-.todoShow {
-  border: 2px rgb(0, 0, 0) solid;
-  padding: 5px;
-}
-
-.todoTitle {
-  border: 2px rgb(0, 0, 0) solid;
-  padding: 5px;
-}
-
-.todoStatus {
-  padding: 5px;
-}
-
-.todoCategory {
-  padding: 5px;
 }

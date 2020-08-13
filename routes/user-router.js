@@ -13,8 +13,6 @@ userRouter.get("/register", authHelpers.loginRedirect, (req, res) => {
   res.render("auth/register");
 });
 
-userRouter.get("/profile", usersController.index, (req, res) => {
-  res.render("user/profile", { user: user });
-});
+userRouter.get("/profile", usersController.index);
 
 module.exports = userRouter;

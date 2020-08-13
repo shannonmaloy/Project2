@@ -16,10 +16,17 @@ const usersController = {
   create(req, res, next) {
     const salt = bcrypt.genSaltSync();
     const hash = bcrypt.hashSync(req.body.password, salt);
+    console.log("arrived at create");
+    console.log(req.body);
     new User({
       username: req.body.username,
       email: req.body.email,
       password_digest: hash,
+      name: req.body.name,
+      address: req.body.address,
+      city: req.body.city,
+      state: req.body.state,
+      zip_code: req.body.zipCode,
     })
       .save()
       .then((user) => {
