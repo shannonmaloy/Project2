@@ -26,6 +26,7 @@ passport.use(
           return done(null, false);
         } else {
           console.log("successful check");
+          console.log(user);
           return done(null, user);
         }
       })

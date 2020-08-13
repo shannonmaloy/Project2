@@ -10,6 +10,7 @@ const passport = require("passport");
 const yelp = require("./public/src/sample");
 const authRouter = require("./routes/auth-router");
 const userRouter = require("./routes/user-router");
+const authHelpers = require("./services/auth/auth-helpers");
 
 //initialize the app
 const app = express();
@@ -44,7 +45,7 @@ app.listen(PORT, () => {
 });
 
 //ROOT ROUTE
-app.get("/", (req, res) => {
+app.get("/", authHelpers.loginRedirect, (req, res) => {
   res.render("index", {
     appName: "What's For Dinner",
   });

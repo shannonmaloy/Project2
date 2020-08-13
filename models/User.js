@@ -14,13 +14,17 @@ class User {
     // .then((user) => {
     //   if (user) return new this(user);
     //   throw new Error("no user found - User.js 17");
-    // });
+    // }); ASK MIKE - WHY DOES THIS CAUSE A PROBLEM???
   }
 
-  static findByUserName(username) {
-    return db.oneOrNone("SELECT * FROM users WHERE username = $1", username);
+  static getById(id) {
+    return db
+      .oneOrNone("SELECT * FROM users WHERE id = $1", id)
+      .then((user) => {
+        if (user) return new this(user);
+        throw new Error("no user found");
+      });
   }
-
   //Instance Methods
   save() {
     return db

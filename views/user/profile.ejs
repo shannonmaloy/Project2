@@ -1,21 +1,22 @@
-<%- include ('partials/boilerplate') %>
+<%- include ('../partials/boilerplate') %>
 
 
 <div id='appContainer'>
     <div id="headingContainer">
       <div>
-      <h2>What's For Dinner?</h1>
+      <h2>PROFILE</h1>
       </div>
       <div class="heading">
         <ul class='heading'>
           <li class='nav'><a href="/">Home</a></li>
-          <li class='nav'><a href="/auth/login">Login</a></li>
+          <p>PROFILE: </p>>
+          <%=user.name%>
           <li class='nav'><a href="/auth/logout">Logout</a></li>
         </ul>
       </div>
     </div>
     <div id='mainContainer'>
-      <p>Are you Hungry2?</p>
+      <p>Are you Hungry?</p>
     </div>
 
 </div>
@@ -23,4 +24,4 @@
 <script src="/src/main.js"></script>
 <script src="/src/sample.js"></script>
 
-<%- include ('partials/end') %>
+<%- include ('../partials/end') %>

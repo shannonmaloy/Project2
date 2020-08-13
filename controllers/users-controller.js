@@ -1,17 +1,17 @@
 const bcrypt = require("bcryptjs");
 const User = require("../models/User");
+const { ok } = require("assert");
 
 const usersController = {
-  //Direct users to their profile page
   index(req, res, next) {
-    res.json({
+    res.render("user/index", {
       message: "Put a user profile page on this route",
       data: {
         user: req.user,
+        params: req.params,
       },
     });
   },
-
   //Register new users
   create(req, res, next) {
     const salt = bcrypt.genSaltSync();
@@ -25,7 +25,7 @@ const usersController = {
       .then((user) => {
         req.login(user, (err) => {
           if (err) return next(err);
-          res.redirect("/user");
+          res.redirect("/auth/login"); //this was /user
         });
       })
       .catch(next);
