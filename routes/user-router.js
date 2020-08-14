@@ -13,6 +13,7 @@ userRouter.get("/register", authHelpers.loginRedirect, (req, res) => {
   res.render("auth/register", {
     appName: "What's For Dinner",
     message: "Put a user profile page on this route",
+    success: false,
     data: {
       user: req.user,
       params: req.params,

@@ -6,6 +6,7 @@ const usersController = {
   index(req, res, next) {
     res.render("user/index", {
       message: "Put a user profile page on this route",
+      success: true,
       data: {
         user: req.user,
         params: req.params,

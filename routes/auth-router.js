@@ -16,6 +16,7 @@ authRouter.get("/login", authHelpers.loginRedirect, (req, res) => {
   res.render("auth/login", {
     appName: "What's For Dinner",
     message: "ok",
+    success: false,
     data: {
       user: req.user,
       params: req.params,

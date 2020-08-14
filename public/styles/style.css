@@ -58,7 +58,7 @@
 				flex: 1 1 auto;
 			}
 
-/* My modification being here */
+/* My mods begin here */
 
 .holy-grail header {
   display: flex;
@@ -101,7 +101,7 @@
   font-size: 1.5vw;
   font-weight: 900;
   margin-right: 15px;
-  
+  text-shadow: 5px 3px 8px #a99999;
 }
 
 .nav {
@@ -122,7 +122,7 @@
   
 }
 
-
+/* LOGIN VIEW STYLES */
 .loginContainer {
   display: flex;
   flex-direction: column;
@@ -144,7 +144,7 @@
   font-weight: 600;
   
 }
-
+/* REGISTER VIEW STYLES */
 .registerContainer {
   display: flex;
   flex-direction: column;
@@ -190,7 +190,6 @@
   width: 50%;
 }
 
-
 .registerBottom input{
   display: flex;
   flex-direction: row ;
@@ -201,16 +200,67 @@
   width: 35%;
 }
 
+/* SIDEBAR 2 (RIGHT) STYLES*/
+.yelpResultsContainer {
+  display: flex;
+  flex-direction: column;
+  align-content: space-between;
+  color: black;
+  text-shadow: 5px 3px 8px #a99999;
+  width: 100%;
+  margin: 0 auto;
+  height: 100%;
+  min-height: 500px;
+  border: 2px green solid;
+}
 
+.yelpResults {
+  display: flex; 
+  flex-direction: column;
+  justify-content: center;
+  border: 2px black solid;
+  height: 32%;
+  margin: 5px 0;
+  align-items: center;
+  background-color: whitesmoke;
+}
+.yelpResultsName {
+  display: flex; 
+  flex-direction: column;
+  justify-content: center;
+  border: 2px black solid;
+  height: 32%;
+  margin: 5px 0;
+  align-items: center;
+  background-color: whitesmoke;
+  font-weight: 900;
+  font-size: 1.4vw;
+}
+
+.yelpResults div {
+  display: flex; 
+  flex-direction: column;
+  justify-content: center;
+  border: 2px red solid;
+  height: 10%;
+  width: 100%;
+  align-items: center;
+  background-color: whitesmoke;
+  font-weight: 300;
+  font-size: 1vw;
+}
+
+/* FOOTER STYLE */
 .holy-grail footer{
   font-family: 'titleLogo';
     font-size: 2.0em;
     text-shadow: 5px 3px 8px #a99999;
     color: white;
-  
+    
 }
 
-@media (min-width: 768px) {
+/* RESPONSIVE / MOBILE STYLE */
+@media (min-width: 968px) {
   .holy-grail-sidebar-1 {
     order: -1;
   }
@@ -218,6 +268,6 @@
     flex-direction: row;
   }
   .hg-sidebar {
-    flex: 0 0 260px;
+    flex: 0 0 240px;
   }
 }

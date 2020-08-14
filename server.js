@@ -49,8 +49,8 @@ app.listen(PORT, () => {
 app.get("/", authHelpers.loginRedirect, (req, res) => {
   res.render("index", {
     appName: "What's For Dinner",
-
-      message: "Put a user profile page on this route",
+    message: "Put a user profile page on this route",
+    success: false,
       data: {
         user: req.user,
         params: req.params,
