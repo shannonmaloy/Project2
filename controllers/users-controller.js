@@ -5,8 +5,8 @@ const { ok } = require("assert");
 const usersController = {
   index(req, res, next) {
     res.render("user/index", {
-      message: "Put a user profile page on this route",
-      success: true,
+      message: "ok",
+      success: false,
       data: {
         user: req.user,
         params: req.params,

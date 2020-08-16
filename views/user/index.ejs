@@ -1,5 +1,35 @@
 <%- include ('../partials/boilerplate') %>
 
-CONTENT HERE
+<div class='searchContainer'>
+	
+	<form class='searchForm' method="POST" action="/restaurant"> 
+		<p class="searchText">Welcome Back <%=data.user.name%>!</p><p class="searchText">Having trouble deciding on a place for dinner again?</p>
+		<p class="searchDescription">You know the drill!  Enter info below and What's For Dinner will select 3 places for you to choose from... </p>
+		<div class="cuisine">
+			<input type="text"  class="searchInput searchCuisine" name="cuisine1" placeholder="Cuisine #1" title="Type In A Cuisine">
+			<input type="text"  id="cuisine2" class="searchInput searchCuisine" name="cuisine2" placeholder="Cuisine #2" title="Type In A Cuisine">
+			<input type="text"  class="searchInput searchCuisine" name="cuisine3" placeholder="Cuisine #3" title="Type In A Cuisine">
+		</div>
+		<input type="text"  class="searchInput address" name="address" placeholder="Address, City, State or Zip" title="Type In An Address, City, State or Zip" required>
+		<div class="searchBottom">
+			<div class="milesContainer">
+				<input type="number"  class="searchInput miles" name="distance" placeholder="Distance (Miles)" title="Enter A Number In Miles" max="25">
+			</div>
+			<div class="priceContainer">
+				<input type="checkbox" id= "price1" class="priceCheckbox" name="price1" value="1" checked>
+				<label class="priceLabel" id="priceLabel1" for="price1">$</label>
+				<input type="checkbox" id= "price2" class="priceCheckbox" name="price2" value="2">
+				<label class="priceLabel" id="priceLabel2" for="price2">$$</label>
+				<input type="checkbox" id= "price3" class="priceCheckbox" name="price3" value="3">
+				<label class="priceLabel" id="priceLabel3" for="price3">$$$</label>
+				<input type="checkbox" id= "price4" class="priceCheckbox" name="price4" value="4">	
+				<label class="priceLabel" id="priceLabel4" for="price4">$$$$</label>
+				
+			</div>
+		</div>
+		<input type="submit" class="searchSubmit" value="Find Dinner"/>
+	</form>
+</div>	
+
 
 <%- include ('../partials/end') %>

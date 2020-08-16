@@ -93,6 +93,153 @@
   margin: 10px auto;
 }
 
+/* SEARCH FORM (MAIN INDEX) STYLES*/
+.searchContainer {
+  margin: 0 auto;
+  align-items: center;
+  width: 100%;
+}
+
+.searchText {
+  padding: 5px;
+  margin: 5px auto;
+  line-height: .7;
+}
+
+.searchDescription {
+  font-size: 1.5vw;
+  font-family: 'Open Sans', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  
+}
+
+.searchForm {
+  font-family: 'titleLogo';
+  color: white;
+  font-size: 4vw;
+  font-weight: 600;
+  text-shadow: 5px 3px 8px #a99999;
+  display: flex;
+  flex-direction: column;
+  background-color: #d66354;
+  border: 2px black solid;
+  border-radius: 5px;
+  width: 650px;
+  align-items: center;
+  margin: 20px auto;
+  padding: 10px;
+  box-shadow: 4px 6px 6px 2px #b3aaaa;
+}
+
+.searchInput, .searchSubmit {
+  font-family: 'Open Sans';
+  font-weight: 600;
+  display: flex;
+  padding: 12px 12px 12px 40px;
+  margin: 5px 0;
+  background-image: url('../assets/download.png');
+  background-position: 10px 12px;
+  background-repeat: no-repeat;
+  background-size: 1em;
+  font-family: 'Open Sans', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: 19px;
+  border: 1px solid #ddd;
+  border-radius: 25px;
+  width: 80%;
+  box-shadow: 4px 6px 6px 2px #b3aaaa;
+  outline: none;
+}
+
+
+.cuisine {
+  display: flex;
+  flex-direction: row;
+  width: 80%;
+}
+#cuisine2 {
+  margin: 5px;
+}
+
+
+.searchBottom {
+  display: flex;
+  flex-direction: row;
+  margin: 0 5px;
+}
+
+.milesContainer{
+  display: flex;
+  flex-direction: row;
+  margin: 0 auto;
+  width: 100%;
+  justify-content: center;
+}
+
+.miles {
+  width: 220px;
+}
+
+.priceContainer{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: center;
+}
+
+.priceLabel {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background: whitesmoke;
+  border: 1px solid #ddd;
+  color: black;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-family: 'Open Sans';
+  font-weight: 600;
+  align-items: center;
+  font-family: 'Open Sans', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: 19px;
+  width: 55px;
+  box-shadow: 4px 6px 6px 2px #b3aaaa;
+  outline: none;
+}
+
+#priceLabel1{
+  border-top-left-radius:  25px;
+  border-bottom-left-radius: 25px;
+  margin-left: 5px;
+}
+
+#priceLabel4{
+  border-top-right-radius:  25px;
+  border-bottom-right-radius: 25px;
+  margin-right: 5px;
+}
+
+.priceCheckbox:checked + .priceLabel {
+  color: #ffffff;
+  font-weight: bold;
+  background: gray;
+}
+
+.priceCheckbox {
+  display: none;
+}
+
+.searchSubmit {
+  background-color: whitesmoke;
+  border: none;
+  color: black;
+  background-image: none;
+  text-decoration: none;
+  width: 30%;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+
+
+
 
 .holy-grail .navBar{
   display: flex;
@@ -203,6 +350,7 @@
 /* SIDEBAR 2 (RIGHT) STYLES*/
 .yelpResultsContainer {
   display: flex;
+  flex: 1;
   flex-direction: column;
   align-content: space-between;
   color: black;
@@ -211,7 +359,12 @@
   margin: 0 auto;
   height: 100%;
   min-height: 500px;
-  border: 2px green solid;
+  
+}
+
+.yelpResultsRating {
+  width: 100%;
+  
 }
 
 .yelpResults {
@@ -223,31 +376,42 @@
   margin: 5px 0;
   align-items: center;
   background-color: whitesmoke;
+  box-shadow: 4px 6px 6px 2px #b3aaaa;
+  
+  height: 50%;
+  
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
-.yelpResultsName {
+
+.yelpResultsAddress, .yelpResultsTelephone {
   display: flex; 
   flex-direction: column;
   justify-content: center;
-  border: 2px black solid;
-  height: 32%;
-  margin: 5px 0;
+  height: 15%;
+  width: 100%;
+  align-items: center;
+  background-color: whitesmoke;
+  font-weight: 700;
+  font-size: .9vw;
+  
+  
+}
+
+.yelpResultsName {
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+  border-bottom: 2px black solid;
+  height: 38%;
+  width: 100%;
   align-items: center;
   background-color: whitesmoke;
   font-weight: 900;
   font-size: 1.4vw;
-}
-
-.yelpResults div {
-  display: flex; 
-  flex-direction: column;
-  justify-content: center;
-  border: 2px red solid;
-  height: 10%;
-  width: 100%;
-  align-items: center;
-  background-color: whitesmoke;
-  font-weight: 300;
-  font-size: 1vw;
+  overflow: hidden;
 }
 
 /* FOOTER STYLE */
@@ -268,6 +432,6 @@
     flex-direction: row;
   }
   .hg-sidebar {
-    flex: 0 0 240px;
+    flex: 0 0 280px;
   }
 }

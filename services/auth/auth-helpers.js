@@ -8,7 +8,7 @@ function comparePass(userPassword, databasePassword) {
 
 //Redirect is unable to login
 function loginRedirect(req, res, next) {
-  if (req.user) return res.redirect("/user");
+  if (req.user) return res.redirect("/user/index");
   return next();
 }
 
