@@ -19,7 +19,6 @@ class Restaurant {
     }
 
     save() {
-        console.log(this.user_id)
         return db
             .one(
                 `WITH new_restaurant AS (

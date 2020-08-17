@@ -4,6 +4,8 @@ const { ok } = require("assert");
 
 const usersController = {
   index(req, res, next) {
+    console.log("Enter userController.index")
+    console.log(res)
     res.render("user/index", {
       message: "ok",
       success: false,
@@ -41,8 +43,7 @@ const usersController = {
   create(req, res, next) {
     const salt = bcrypt.genSaltSync();
     const hash = bcrypt.hashSync(req.body.password, salt);
-    console.log("arrived at create");
-    console.log(req.body);
+    
     new User({
       username: req.body.username,
       email: req.body.email,

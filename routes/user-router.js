@@ -25,9 +25,7 @@ userRouter.get("/register", authHelpers.loginRedirect, (req, res) => {
 
 userRouter.get("/profile", authHelpers.loginRequired, usersController.showHistory)
 
-
 userRouter.get('/edit/:id', usersController.show, (req, res) => {
-  console.log(res.locals.user)
   res.render('user/edit', {
     data: {
       user: res.locals.user

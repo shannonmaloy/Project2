@@ -31,7 +31,7 @@ restaurantRouter.post("/add", authHelpers.loginRequired,restaurantsController.cr
 }
 );
 
-restaurantRouter.get("/add/*", restaurantHelper.detail, (req, res) => {
+restaurantRouter.get("/add/*", authHelpers.loginRequired,restaurantHelper.detail, (req, res) => {
   
   res.render('restaurant/add', {
     message: "Ok",
