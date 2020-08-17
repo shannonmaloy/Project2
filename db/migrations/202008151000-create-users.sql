@@ -7,6 +7,6 @@ CREATE TABLE IF NOT EXISTS users (
   streetaddress VARCHAR(255),
   city VARCHAR(255),
   state VARCHAR(255),
-  zip_code INTEGER,
-);
+  zip_code INTEGER
+)
 
