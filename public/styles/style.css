@@ -10,50 +10,50 @@
        url('./Alltherollpersonaluse-DOJE0.otf') format('svg'); /* Legacy iOS */      
 }
 
-/* I utilized the a tuturial on */
+/* I utilized the a tuturial on how to build a Holy Grail layout */
 * {
-				box-sizing: border-box;
-			}
-			html, body {
-				margin: 0;
-				font-family: 'Open Sans',sans-serif;
-				font-size: 1.1em;
-				text-align: center;
-        color: #FFF;
-        padding: 0;
-			}
-			.holy-grail header,
-			.holy-grail footer,
-			.hg-sidebar,
-			.holy-grail-content {
-        padding: 20px;
-        background-color: gray;
-			}
-			.holy-grail header,
-			.holy-grail footer {
-        background: #d66354;
-        
-			}
-			.hg-sidebar {
-				background: white;
-			}
-			.holy-grail-content {
-				color: rgb(0, 0, 0);
-			}
+  box-sizing: border-box;
+}
+html, body {
+  margin: 0;
+  font-family: 'Open Sans',sans-serif;
+  font-size: 1.1em;
+  text-align: center;
+  color: #FFF;
+  padding: 0;
+}
+.holy-grail header,
+.holy-grail footer,
+.hg-sidebar,
+.holy-grail-content {
+  padding: 20px;
+  background-color: gray;
+}
+.holy-grail header,
+.holy-grail footer {
+  background: #d66354;
+  
+}
+.hg-sidebar {
+  background: white;
+}
+.holy-grail-content {
+  color: rgb(0, 0, 0);
+}
 
-		
-			.holy-grail {
-				min-height: 100vh;
-			}
-			.holy-grail,
-			.holy-grail-body {
-				display: flex;
-				flex: 1 1 auto;
-				flex-direction: column;
-			}
-			.holy-grail-content {
-				flex: 1 1 auto;
-			}
+
+.holy-grail {
+  min-height: 100vh;
+}
+.holy-grail,
+.holy-grail-body {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+}
+.holy-grail-content {
+  flex: 1 1 auto;
+}
 
 .holy-grail header {
   display: flex;
@@ -95,6 +95,21 @@
     text-shadow: 5px 3px 8px #a99999;
     color: white;
     margin: 30px 0;
+}
+
+.hidden {
+  display: none;
+}
+
+.selectRestaurant{
+  min-height: 100px;
+
+}
+
+.yelpResultsNotes {
+  font-size: 1vw;
+  border-top: 2px black solid;
+  width: 80%;
 }
 
 /* SEARCH FORM (MAIN INDEX) STYLES*/

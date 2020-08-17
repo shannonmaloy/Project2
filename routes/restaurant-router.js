@@ -32,7 +32,7 @@ restaurantRouter.post("/add", authHelpers.loginRequired,restaurantsController.cr
 );
 
 restaurantRouter.get("/add/*", restaurantHelper.detail, (req, res) => {
-  console.log(res.locals.restaurantDetail)
+  
   res.render('restaurant/add', {
     message: "Ok",
     success: true,
@@ -43,7 +43,7 @@ restaurantRouter.get("/add/*", restaurantHelper.detail, (req, res) => {
   })
 })
 
-restaurantRouter.get("/detail/*", restaurantHelper.detail, (req, res) => {
+restaurantRouter.get("/detail/*", restaurantHelper.detail, restaurantHelper.reviews, (req, res) => {
     
     res.render("restaurant/detail", {
       message: "Ok",
