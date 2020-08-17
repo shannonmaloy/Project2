@@ -45,9 +45,9 @@ The following user stories:
 - Along with editing notes on saved restaurants, users can also edit their user profiles including passwords as needed.  Usernames may not be changed.
 
 ## Wireframes and Schemas:
-The wireframes [here](./wireframes_schemas/Wireframes_Project2_Restaurant_Finder.pdf). 
+The wireframes ![here](./wireframes_schemas/Wireframes_Project2_Restaurant_Finder.pdf). 
 
-Database Schemas (Initial - the have been slightly changed) [here](./wireframes_schemas/initial_DV_Schema_Plans.pdf). 
+Database Schemas (Initial - the have been slightly changed) ![here](./wireframes_schemas/initial_DV_Schema_Plans.pdf). 
 
 ## Exposed HTML Routes:
 - /user
