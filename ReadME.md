@@ -2,7 +2,7 @@
 If you've ever had the debate with friends or loved ones about "What Should We Do For Dinner", then this app is for you!  This application is designed remove the endless scrolling through pages of results on food websites and provide you with 3 quick options to choose from - complete with contact info, user ratings, reviews and more.  
 
 This application was built using Node.js and Express.js.  It utilizes the MVC build pattern along with PostGreSQL/PG-Promise for data storage.  External data is obtained by utilizing the [Yelp Fusion API](https://www.yelp.com/developers/documentation/v3).  Users have the option to log-in and create a user profile with user authentication via passport and bcrypt.js.  It was deployed via Heroku and uses continuous integration.
-![todo](./assets/todo.jpg)
+
 
 # Deployed At:
 [What's For Dinner](https://immense-citadel-39219.herokuapp.com/)
@@ -50,15 +50,15 @@ The wireframes [here](./wireframes_schemas/Wireframes_Project2_Restaurant_Finder
 Database Schemas (Initial - the have been slightly changed) [here](./wireframes_schemas/initial_DV_Schema_Plans.pdf). 
 
 ## Exposed HTML Routes:
-/user
-/user/profile
-/user/index
-/user/edit
-/restaurants
-/restaurants/add
-/restaurants/detail
-/restaurants/index
-/auth
-/auth/login
-/auth/register
+- /user
+- /user/profile
+- /user/index
+- /user/edit
+- /restaurants
+- /restaurants/add
+- /restaurants/detail
+- /restaurants/index
+- /auth
+- /auth/login
+- /auth/register
 
