@@ -48,7 +48,7 @@ const usersController = {
       email: req.body.email,
       password_digest: hash,
       fullname: req.body.fullname,
-      address: req.body.address,
+      streetaddress: req.body.streetaddress,
       city: req.body.city,
       state: req.body.state,
       zip_code: req.body.zipCode,

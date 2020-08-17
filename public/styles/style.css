@@ -10,17 +10,17 @@
        url('./Alltherollpersonaluse-DOJE0.otf') format('svg'); /* Legacy iOS */      
 }
 
-
+/* I utilized the a tuturial on */
 * {
 				box-sizing: border-box;
 			}
 			html, body {
 				margin: 0;
-				padding: 0;
 				font-family: 'Open Sans',sans-serif;
 				font-size: 1.1em;
 				text-align: center;
-				color: #FFF;
+        color: #FFF;
+        padding: 0;
 			}
 			.holy-grail header,
 			.holy-grail footer,
@@ -89,7 +89,13 @@
 }
 
 /* USER EDIT PROFILE STYLES*/
-
+.smallLogo {
+  font-family: 'titleLogo';
+    font-size: 2.7em;
+    text-shadow: 5px 3px 8px #a99999;
+    color: white;
+    margin: 30px 0;
+}
 
 /* SEARCH FORM (MAIN INDEX) STYLES*/
 

@@ -8,7 +8,7 @@ class User {
     email,
     password_digest,
     fullname,
-    address,
+    streetaddress,
     city,
     state,
     zip_code,
@@ -18,7 +18,7 @@ class User {
     this.email = email;
     this.password_digest = password_digest;
     this.fullname = fullname;
-    this.address = address;
+    this.streetaddress = streetaddress;
     this.city = city;
     this.state = state;
     this.zip_code = zip_code;
@@ -55,8 +55,8 @@ class User {
 
       .one(
         `INSERT INTO users
-        (username, email, password_digest, fullname, address, city, state, zip_code)
-        VALUES ($/username/, $/email/, $/password_digest/, $/fullname/, $/address/, $/city/, $/state/, $/zip_code/)
+        (username, email, password_digest, fullname, streetaddress, city, state, zip_code)
+        VALUES ($/username/, $/email/, $/password_digest/, $/fullname/, $/streetaddress/, $/city/, $/state/, $/zip_code/)
         RETURNING *`,
         this
       )
@@ -70,7 +70,7 @@ class User {
         `UPDATE users SET
       email = $/email/,
       fullname = $/fullname/,
-      address = $/address/,
+      streetaddress = $/streetaddress/,
       city = $/city/,
       state = $/state/,
       zip_code = $/zip_code/
