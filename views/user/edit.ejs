@@ -3,29 +3,29 @@
 
 <div class="registerContainer">
   <p class='logo'>User Profile Page</p>
-  <form method="PUT" action="/user/">
+  <form method="POST" action="/user/<%=user.id%>?_method=PUT">
     <div class='registerTop'>
-        <input name="username" type="text" value= readonly />
-        <input name="password" type="password" placeholder="Password" required />
+        <input name="username" type="text" value=<%=user.username%> readonly />
+        <input name="password" type="password" value=<%=user.password_digest%> required />
     </div>
     <div class='registerFull'>
-        <input name="email" type="email" placeholder="Email" required />
-        <input name="name" type="text" placeholder="Name" required />
-        <input name="address" type="text" placeholder="Street Address" required />
+        <input name="email" type="email" value=<%=user.email%> required />
+        <input name="fullname" type="text" value='<%=user.fullname%>' required />
+        <input name="address" type="text" value='<%=user.address%>' required />
     </div>
     <div class='registerBottom'>
-          <input name="city" type="text" placeholder="City" required />
+          <input name="city" type="text" value=<%=user.city%> required />
           <input
           name="state"
           type="text"
-          placeholder="State"
+          value=<%=user.state%>
           required
           maxlength="2"
           />
           <input
             name="zipCode"
             type="number"
-            placeholder="Zip Code"
+            value=<%=user.zip_code%>
             required
             minlength="5"
             maxlength="5"
@@ -33,7 +33,7 @@
             required
           />
   </div>
-    <input type="submit" value="Register!" />
+    <input type="submit" value="Save Changes" />
   </form>
 </div>
 

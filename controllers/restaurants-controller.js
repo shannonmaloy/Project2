@@ -1,12 +1,12 @@
 const Restaurant = require("../models/Restaurant");
-const searchRest = require('../services/restaurant-helper');
-const restaurantRouter = require("../routes/restaurant-router");
+const { show } = require("./users-controller");
+// const searchRest = require('../services/restaurant-helper');
+// const restaurantRouter = require("../routes/restaurant-router");
 
 const restaurantsController = {
     index(req, res, next) {
-        console.log("Controller Line 9", res.json)
         res.json("restaurant/index", {
-            message: "Put a user profile page on this route",
+            message: "Ok",
             success: true,
             data: {
                 user: req.user,
@@ -16,8 +16,6 @@ const restaurantsController = {
     },
 
     create(req, res, next) {
-        console.log("rest controller",req.body)
-        console.log("LINE 22:" ,req.user.id)
         new Restaurant({
             name: req.body.name,
             yelpAlias: req.body.yelpAlias,
@@ -33,7 +31,9 @@ const restaurantsController = {
             res.redirect('/user/profile')
             })
         .catch(next)
-    }
+    },
+
+    
 }
 
 module.exports = restaurantsController;

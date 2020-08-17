@@ -23,21 +23,15 @@ userRouter.get("/register", authHelpers.loginRedirect, (req, res) => {
   })
 }),
 
-userRouter.get("/profile", authHelpers.loginRequired, (req, res) => {
-  res.render("user/profile", {
-    appName: "What's For Dinner",
-    message: "OK",
-    success: true,
-    data: {
-      user: req.user,
-      params: req.params,
-    }
-  })
-});
+userRouter.get("/profile", authHelpers.loginRequired, usersController.showHistory)
+
 
 userRouter.get('/edit/:id', usersController.show, (req, res) => {
+  console.log(res.locals.user)
   res.render('user/edit', {
-    user: res.locals.user
+    data: {
+      user: res.locals.user
+    }
   })
 })
 

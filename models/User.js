@@ -7,7 +7,7 @@ class User {
     username,
     email,
     password_digest,
-    name,
+    fullname,
     address,
     city,
     state,
@@ -17,7 +17,7 @@ class User {
     this.username = username;
     this.email = email;
     this.password_digest = password_digest;
-    this.name = name;
+    this.fullname = fullname;
     this.address = address;
     this.city = city;
     this.state = state;
@@ -36,6 +36,18 @@ class User {
         throw new Error("no user found");
       });
   }
+
+  static getAllHistory(id) {
+    console.log(id)
+    return db
+      .manyOrNone('SELECT * FROM restaurants JOIN user_restaurants ON restaurants.id = user_restaurants.restaurant_id JOIN users ON users.id = user_restaurants.user_id WHERE users.id = $1', id)
+      .then((restaurants) => {
+        console.log("45:",restaurants)
+        return restaurants
+        });
+      
+  }
+
   //Instance Methods
   save() {
     console.log("got here");
@@ -43,8 +55,8 @@ class User {
 
       .one(
         `INSERT INTO users
-        (username, email, password_digest, name, address, city, state, zip_code)
-        VALUES ($/username/, $/email/, $/password_digest/, $/name/, $/address/, $/city/, $/state/, $/zip_code/)
+        (username, email, password_digest, fullname, address, city, state, zip_code)
+        VALUES ($/username/, $/email/, $/password_digest/, $/fullname/, $/address/, $/city/, $/state/, $/zip_code/)
         RETURNING *`,
         this
       )
@@ -57,7 +69,7 @@ class User {
       .oneOrNone(
         `UPDATE users SET
       email = $/email/,
-      name = $/name/,
+      fullname = $/fullname/,
       address = $/address/,
       city = $/city/,
       state = $/state/,

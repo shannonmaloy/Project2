@@ -16,7 +16,7 @@
         
         <div class="navBar">
           <ul class='nav'>
-          <% if (data.user != undefined) { %> <li class='home'>Welcome, <%=data.user.name%> | </li>  <% }; %>
+          <% if (data.user != undefined) { %> <li class='home'>Welcome, <%=data.user.fullname%> | </li>  <% }; %>
             <li class='home'><a href="/">Home |</a></li>
             <% if (data.user === undefined) { %>  <li class='login'><a href="/auth/login">Login</a></li><% }; %>
             <% if (data.user != undefined) { %>  <li class='profile'><a href="/user/profile">Profile | </a></li><% }; %>

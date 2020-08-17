@@ -3,19 +3,19 @@
 
 <div class="yelpSearchContainer">
   <div class="restaurantDetailMessage">
-      <div class='restaurantResultMessage'>Welcome <%=data.user.name%>!!  <a href='/user/edit/<%=data.user.id%>'>Click Here</a> To Update Your User Profile</div>
+      <div class='restaurantResultMessage'>Welcome <%=data.user.fullname%>!!</div>
       
   </div>
-  <div>(What's For Dinner) Selection History:</div>
-  <% if (1<0) { %>
+  <div><span class="smallLogo">(What's For Dinner)</span> Selection History:</div>
+  <% if (success) { %>
       <div class='yelpResultsContainer'>
       <% for (let restaurant of data.restaurants) { %>
               <div class='yelpResults'>
               <div class="yelpResultsName"><a href="/restaurant/detail/<%=restaurant.alias%>"><%=restaurant.name%></a></div>
-              <div class="yelpResultsAddress"><%=restaurant.location.address1%> <%=restaurant.location.address2%> <%=restaurant.location.address3%></div>
-              <div class="yelpResultsAddress"><%=restaurant.location.city%>,<%=restaurant.location.state%> <%=restaurant.location.zip_code%></div>
-              <div class="yelpResultsTelephone"><%=restaurant.display_phone%> | <%=restaurant.price%></div>
-              <div class="yelpResultsRating"><img class="yelpRating<%=restaurant.rating%>" src="../assets/yelp_stars/web_and_ios/regular/regular_<%=restaurant.rating%>.png"></div>
+              <div class="yelpResultsAddress"><%=restaurant.address%> </div>
+              <div class="yelpResultsAddress"><%=restaurant.city%> <%=restaurant.state%><%=restaurant.zip_code%></div>
+              <div class="yelpResultsTelephone"></div>
+              <div class="yelpResultsRating"></div>
           </div>
       <% } %>
   </div>

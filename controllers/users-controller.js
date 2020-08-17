@@ -15,12 +15,26 @@ const usersController = {
   },
 
   show(req, res, next) {
-    console.log("User Show")
     User.getById(req.params.id)
       .then((user) => {
         res.locals.user = user
         next()
       }).catch(next)
+  },
+
+  showHistory(req, res, next) {
+    
+    User.getAllHistory(req.user.id)
+      .then((restaurants) => {
+        res.render('user/profile', {
+          message: 'ok',
+          success: true,
+          data: {
+            restaurants: restaurants,
+            user: req.user
+          }
+      })
+    }).catch(next)
   },
 
   //Register new users
@@ -33,7 +47,7 @@ const usersController = {
       username: req.body.username,
       email: req.body.email,
       password_digest: hash,
-      name: req.body.name,
+      fullname: req.body.fullname,
       address: req.body.address,
       city: req.body.city,
       state: req.body.state,

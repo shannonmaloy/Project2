@@ -7,7 +7,7 @@ const cookieParser = require("cookie-parser");
 const session = require("express-session");
 const passport = require("passport");
 
-const yelp = require("./public/src/sample");
+
 const authRouter = require("./routes/auth-router");
 const userRouter = require("./routes/user-router");
 const authHelpers = require("./services/auth/auth-helpers");
