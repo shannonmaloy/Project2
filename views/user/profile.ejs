@@ -3,10 +3,10 @@
 
 <div class="yelpSearchContainer">
   <div class="restaurantDetailMessage">
-      <div class='restaurantResultMessage'>You're one step closer to a full belly!  Click on your results to find out more and to make your choice!</div>
+      <div class='restaurantResultMessage'>Welcome <%=data.user.name%>!!  <a href='/user/edit/<%=data.user.id%>'>Click Here</a> To Update Your User Profile</div>
       
   </div>
-
+  <div>(What's For Dinner) Selection History:</div>
   <% if (1<0) { %>
       <div class='yelpResultsContainer'>
       <% for (let restaurant of data.restaurants) { %>
@@ -20,7 +20,6 @@
       <% } %>
   </div>
   <% } %>
-
 <script src="/src/main.js"></script>
 <script src="/src/sample.js"></script>
 

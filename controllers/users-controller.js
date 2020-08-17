@@ -11,8 +11,18 @@ const usersController = {
         user: req.user,
         params: req.params,
       },
-    });
+    }).catch(next)
   },
+
+  show(req, res, next) {
+    console.log("User Show")
+    User.getById(req.params.id)
+      .then((user) => {
+        res.locals.user = user
+        next()
+      }).catch(next)
+  },
+
   //Register new users
   create(req, res, next) {
     const salt = bcrypt.genSaltSync();
@@ -33,11 +43,20 @@ const usersController = {
       .then((user) => {
         req.login(user, (err) => {
           if (err) return next(err);
-          res.redirect("/auth/login"); //this was /user
+          res.redirect("/user/profile"); 
         });
       })
       .catch(next);
   },
+  //Allow users to edit their profiles
+  update(req, res, next) {
+    User.getById(req.params.id)
+      .then((user) => {
+      return user.update(req.body)
+      }).then((updatedUser) => {
+      res.redirect('/user/profile')
+    }).catch(next)
+  }
 };
 
 module.exports = usersController;

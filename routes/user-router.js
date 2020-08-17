@@ -35,4 +35,12 @@ userRouter.get("/profile", authHelpers.loginRequired, (req, res) => {
   })
 });
 
+userRouter.get('/edit/:id', usersController.show, (req, res) => {
+  res.render('user/edit', {
+    user: res.locals.user
+  })
+})
+
+userRouter.put('/:id', usersController.update)
+
 module.exports = userRouter;

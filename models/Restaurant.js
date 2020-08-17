@@ -23,12 +23,12 @@ class Restaurant {
         return db
             .one(
                 `WITH new_restaurant AS (
-                    INSERT INTO restaurants (name, yelp_alias, address, city, state, zip_code) 
-                    VALUES ($/name/, $/yelp_alias/, $/address/, $/city/, $/state/, $/zip_code/)
-                    RETURNING id
-                    )
-                    INSERT INTO user_restaurants (user_id, restaurant_id, notes)
-                    VALUES ($/user_id/, (SELECT id from new_restaurant), $/notes/) RETURNING *`, this
+                    INSERT INTO restaurants (name, yelp_alias,address, city, state, zip_code) VALUES ($/name/, $/yelp_alias/, $/address/, $/city/, $/state/, $/zip_code/)
+                    RETURNING id as restaurant_id
+                )
+                INSERT INTO user_restaurants (restaurant_id, user_id)
+                VALUES
+                ((SELECT restaurant_id FROM new_restaurant), $/user_id/) RETURNING *`, this
         ).then((restaurant) => {
             return Object.assign(this, restaurant)
         })

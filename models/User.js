@@ -26,7 +26,6 @@ class User {
   //Static Methods
   static findByUserName(username) {
     return db.oneOrNone("SELECT * FROM users WHERE username = $1", username);
-    
   }
 
   static getById(id) {
@@ -43,16 +42,35 @@ class User {
     return db
 
       .one(
-        `WITH new_restaurant AS (
-          INSERT INTO restaurants (name, yelp_alias,address, city, state, zip_code) VALUES ($/name/, $/yelp_alias/, $/address/, $/city/, $/state/, $/zip_code/)
-          RETURNING id as restaurant_id
-      )
-      INSERT INTO user_restaurants (restaurant_id, user_id)
-      VALUES
-      ((SELECT restaurant_id FROM new_restaurant), $/user_id/);`,
+        `INSERT INTO users
+        (username, email, password_digest, name, address, city, state, zip_code)
+        VALUES ($/username/, $/email/, $/password_digest/, $/name/, $/address/, $/city/, $/state/, $/zip_code/)
+        RETURNING *`,
         this
       )
       .then((savedUser) => Object.assign(this, savedUser));
+  }
+
+  update(changes) {
+    Object.assign(this, changes)
+    return db
+      .oneOrNone(
+        `UPDATE users SET
+      email = $/email/,
+      name = $/name/,
+      address = $/address/,
+      city = $/city/,
+      state = $/state/,
+      zip_code = $/zip_code/
+      WHERE id = $/id/
+      RETURNING *`, this
+    ).then((user) => {
+      return Object.assign(this, user)
+    })
+  }
+
+  delete() {
+    return db.oneOrNone('DELETE FROM users WHERE id = $1', this.id)
   }
 }
 
