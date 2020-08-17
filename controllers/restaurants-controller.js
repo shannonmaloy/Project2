@@ -33,7 +33,6 @@ const restaurantsController = {
         .catch(next)
     },
 
-    
 }
 
 module.exports = restaurantsController;

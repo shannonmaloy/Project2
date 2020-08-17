@@ -38,11 +38,9 @@ class User {
   }
 
   static getAllHistory(id) {
-    console.log(id)
     return db
       .manyOrNone('SELECT * FROM restaurants JOIN user_restaurants ON restaurants.id = user_restaurants.restaurant_id JOIN users ON users.id = user_restaurants.user_id WHERE users.id = $1', id)
       .then((restaurants) => {
-        console.log("45:",restaurants)
         return restaurants
         });
       
@@ -50,7 +48,6 @@ class User {
 
   //Instance Methods
   save() {
-    console.log("got here");
     return db
 
       .one(

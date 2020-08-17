@@ -74,11 +74,6 @@ const restaurantHelper = {
             next(err);
         });
         
-        // client.reviews(req.params[0]).then(response => {
-        //     res.locals.restaurantReviews = response.jsonBody.reviews
-        //     console.log(res.locals.restaurantReviews)
-        //     next()
-        // })
     },
 
     reviews(req, res, next) {

@@ -12,7 +12,7 @@
       <div class='yelpResultsContainer'>
       <% for (let restaurant of data.restaurants) { %>
               <div class='yelpResults selectRestaurant'>
-              <div class="yelpResultsName"><%=restaurant.name%></div>
+              <div class="yelpResultsName"><a href="/restaurant/detail/<%=restaurant.yelp_alias%>"><%=restaurant.name%></a></div>
               <div class="yelpResultsAddress"><%=restaurant.address%> </div>
               <div class="yelpResultsAddress"><%=restaurant.city%>,<%=restaurant.state%> <%=restaurant.zip_code%></div>
               <div class="yelpResultsNotes"><%=restaurant.notes%></div>
