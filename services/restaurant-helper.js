@@ -61,29 +61,37 @@ const restaurantHelper = {
         });
         },
 
-    detail(req, res, next) {
-        console.log("arriveed in help line 65")
-        console.log(req.params)   
+    detail(req, res, next) {  
         searchRequest = req.params[0]
         client
         .business(searchRequest)
             .then((response) => {
                 res.locals.restaurantDetail = response.jsonBody
-                
+                next()
         })
         .catch((err) => {
             console.log(err);
             next(err);
         });
         
+        // client.reviews(req.params[0]).then(response => {
+        //     res.locals.restaurantReviews = response.jsonBody.reviews
+        //     console.log(res.locals.restaurantReviews)
+        //     next()
+        // })
+    },
+
+    reviews(req, res, next) {
+        searchRequest = req.params[0]
         client.reviews(req.params[0]).then(response => {
             res.locals.restaurantReviews = response.jsonBody.reviews
             console.log(res.locals.restaurantReviews)
             next()
-        })
-    },
-
-    
+        }).catch((err) => {
+            console.log(err);
+            next(err);
+        });
+    }
 };
 
 module.exports = { restaurantHelper };

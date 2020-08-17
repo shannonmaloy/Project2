@@ -26,9 +26,9 @@ class Restaurant {
                     INSERT INTO restaurants (name, yelp_alias,address, city, state, zip_code) VALUES ($/name/, $/yelp_alias/, $/address/, $/city/, $/state/, $/zip_code/)
                     RETURNING id as restaurant_id
                 )
-                INSERT INTO user_restaurants (restaurant_id, user_id)
+                INSERT INTO user_restaurants (restaurant_id, user_id, notes)
                 VALUES
-                ((SELECT restaurant_id FROM new_restaurant), $/user_id/) RETURNING *`, this
+                ((SELECT restaurant_id FROM new_restaurant), $/user_id/, $/notes/) RETURNING *`, this
         ).then((restaurant) => {
             return Object.assign(this, restaurant)
         })
