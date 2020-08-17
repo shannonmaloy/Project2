@@ -1,26 +1,25 @@
 <%- include ('../partials/boilerplate') %>
 
 
-<div id='appContainer'>
-    <div id="headingContainer">
-      <div>
-      <h2>PROFILE</h1>
-      </div>
-      <div class="heading">
-        <ul class='heading'>
-          <li class='nav'><a href="/">Home</a></li>
-          <p>PROFILE: </p>>
-          <%=user.name%>
-          <li class='nav'><a href="/auth/logout">Logout</a></li>
-        </ul>
-      </div>
-    </div>
-    <div id='mainContainer'>
-      <p>Are you Hungry?</p>
-    </div>
-
-</div>
-
+<div class="yelpSearchContainer">
+  <div class="restaurantDetailMessage">
+      <div class='restaurantResultMessage'>Welcome <%=data.user.fullname%>!!</div>
+      
+  </div>
+  <div><span class="smallLogo">(What's For Dinner)</span> Selection History:</div>
+  <% if (success) { %>
+      <div class='yelpResultsContainer'>
+      <% for (let restaurant of data.restaurants) { %>
+              <div class='yelpResults'>
+              <div class="yelpResultsName"><%=restaurant.name%></div>
+              <div class="yelpResultsAddress"><%=restaurant.address%> </div>
+              <div class="yelpResultsAddress"><%=restaurant.city%>,<%=restaurant.state%> <%=restaurant.zip_code%></div>
+              <div class="yelpResultsTelephone"></div>
+              <div class="yelpResultsRating"></div>
+          </div>
+      <% } %>
+  </div>
+  <% } %>
 <script src="/src/main.js"></script>
 <script src="/src/sample.js"></script>
 

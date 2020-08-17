@@ -7,8 +7,8 @@ class User {
     username,
     email,
     password_digest,
-    name,
-    address,
+    fullname,
+    streetaddress,
     city,
     state,
     zip_code,
@@ -17,8 +17,8 @@ class User {
     this.username = username;
     this.email = email;
     this.password_digest = password_digest;
-    this.name = name;
-    this.address = address;
+    this.fullname = fullname;
+    this.streetaddress = streetaddress;
     this.city = city;
     this.state = state;
     this.zip_code = zip_code;
@@ -26,10 +26,6 @@ class User {
   //Static Methods
   static findByUserName(username) {
     return db.oneOrNone("SELECT * FROM users WHERE username = $1", username);
-    // .then((user) => {
-    //   if (user) return new this(user);
-    //   throw new Error("no user found - User.js 17");
-    // }); ASK MIKE - WHY DOES THIS CAUSE A PROBLEM???
   }
 
   static getById(id) {
@@ -40,6 +36,18 @@ class User {
         throw new Error("no user found");
       });
   }
+
+  static getAllHistory(id) {
+    console.log(id)
+    return db
+      .manyOrNone('SELECT * FROM restaurants JOIN user_restaurants ON restaurants.id = user_restaurants.restaurant_id JOIN users ON users.id = user_restaurants.user_id WHERE users.id = $1', id)
+      .then((restaurants) => {
+        console.log("45:",restaurants)
+        return restaurants
+        });
+      
+  }
+
   //Instance Methods
   save() {
     console.log("got here");
@@ -47,12 +55,34 @@ class User {
 
       .one(
         `INSERT INTO users
-        (username, email, password_digest, name, address, city, state, zip_code)
-        VALUES ($/username/, $/email/, $/password_digest/, $/name/, $/address/, $/city/, $/state/, $/zip_code/)
+        (username, email, password_digest, fullname, streetaddress, city, state, zip_code)
+        VALUES ($/username/, $/email/, $/password_digest/, $/fullname/, $/streetaddress/, $/city/, $/state/, $/zip_code/)
         RETURNING *`,
         this
       )
       .then((savedUser) => Object.assign(this, savedUser));
+  }
+
+  update(changes) {
+    Object.assign(this, changes)
+    return db
+      .oneOrNone(
+        `UPDATE users SET
+      email = $/email/,
+      fullname = $/fullname/,
+      streetaddress = $/streetaddress/,
+      city = $/city/,
+      state = $/state/,
+      zip_code = $/zip_code/
+      WHERE id = $/id/
+      RETURNING *`, this
+    ).then((user) => {
+      return Object.assign(this, user)
+    })
+  }
+
+  delete() {
+    return db.oneOrNone('DELETE FROM users WHERE id = $1', this.id)
   }
 }
 

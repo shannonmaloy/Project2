@@ -1,0 +1,43 @@
+<%- include ('../partials/boilerplate') %>
+ 
+
+<div class="registerContainer">
+  <p class='logo'>User Profile Page</p>
+  <form method="POST" action="/user/<%=user.id%>?_method=PUT">
+    <div class='registerTop'>
+        <input name="username" type="text" value=<%=user.username%> readonly />
+        <input name="password" type="password" value=<%=user.password_digest%> required />
+    </div>
+    <div class='registerFull'>
+        <input name="email" type="email" value=<%=user.email%> required />
+        <input name="fullname" type="text" value='<%=user.fullname%>' required />
+        <input name="streetaddress" type="text" value='<%=user.streetaddress%>' required />
+    </div>
+    <div class='registerBottom'>
+          <input name="city" type="text" value=<%=user.city%> required />
+          <input
+          name="state"
+          type="text"
+          value=<%=user.state%>
+          required
+          maxlength="2"
+          />
+          <input
+            name="zipCode"
+            type="number"
+            value=<%=user.zip_code%>
+            required
+            minlength="5"
+            maxlength="5"
+            max="99999"
+            required
+          />
+  </div>
+    <input type="submit" value="Save Changes" />
+  </form>
+</div>
+
+<script src="/src/main.js"></script>
+<script src="/src/sample.js"></script>
+
+<%- include ('../partials/end') %>

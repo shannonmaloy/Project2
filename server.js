@@ -7,16 +7,17 @@ const cookieParser = require("cookie-parser");
 const session = require("express-session");
 const passport = require("passport");
 
-const yelp = require("./public/src/sample");
+
 const authRouter = require("./routes/auth-router");
 const userRouter = require("./routes/user-router");
 const authHelpers = require("./services/auth/auth-helpers");
 const restaurantRouter = require("./routes/restaurant-router");
+const restaurantHelper = require("./services/restaurant-helper");
 
 //initialize the app
 const app = express();
 //load the .env into the app
-require("dotenv").config();
+require("dotenv").config({ path: "../.env" });
 
 //middlewares
 app.use(methodOverride("_method"));
@@ -49,18 +50,15 @@ app.listen(PORT, () => {
 app.get("/", authHelpers.loginRedirect, (req, res) => {
   res.render("index", {
     appName: "What's For Dinner",
-
-      message: "Put a user profile page on this route",
-      data: {
-        user: req.user,
-        params: req.params,
-      },
+    message: "Ok",
+    success: false,
+    data: {
+      user: req.user,
+      params: req.params,
+    },
   });
 });
 
-
-
-// app.use("/restaurants", todoRouter);
 app.use("/auth", authRouter);
 app.use("/user", userRouter);
 app.use("/restaurant", restaurantRouter);

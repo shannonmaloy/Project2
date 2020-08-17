@@ -10,23 +10,24 @@
        url('./Alltherollpersonaluse-DOJE0.otf') format('svg'); /* Legacy iOS */      
 }
 
-
+/* I utilized the a tuturial on */
 * {
 				box-sizing: border-box;
 			}
 			html, body {
 				margin: 0;
-				padding: 0;
 				font-family: 'Open Sans',sans-serif;
 				font-size: 1.1em;
 				text-align: center;
-				color: #FFF;
+        color: #FFF;
+        padding: 0;
 			}
 			.holy-grail header,
 			.holy-grail footer,
 			.hg-sidebar,
 			.holy-grail-content {
-				padding: 20px;
+        padding: 20px;
+        background-color: gray;
 			}
 			.holy-grail header,
 			.holy-grail footer {
@@ -34,17 +35,13 @@
         
 			}
 			.hg-sidebar {
-				background: gray;
+				background: white;
 			}
 			.holy-grail-content {
 				color: rgb(0, 0, 0);
 			}
 
-			/**
-			 * Flex things:
-			 * — Mobile first
-			 * — Responsive
-			 */
+		
 			.holy-grail {
 				min-height: 100vh;
 			}
@@ -57,8 +54,6 @@
 			.holy-grail-content {
 				flex: 1 1 auto;
 			}
-
-/* My modification being here */
 
 .holy-grail header {
   display: flex;
@@ -93,6 +88,171 @@
   margin: 10px auto;
 }
 
+/* USER EDIT PROFILE STYLES*/
+.smallLogo {
+  font-family: 'titleLogo';
+    font-size: 2.7em;
+    text-shadow: 5px 3px 8px #a99999;
+    color: white;
+    margin: 30px 0;
+}
+
+/* SEARCH FORM (MAIN INDEX) STYLES*/
+
+.logo {
+    font-family: 'titleLogo';
+    font-size: 2.7em;
+    text-shadow: 5px 3px 8px #a99999;
+    color: white;
+    margin: 30px 0;
+}
+
+
+.searchContainer {
+  margin: 0 auto;
+  align-items: center;
+  width: 100%;
+  
+}
+
+.searchText {
+  padding: 5px;
+  margin: 5px auto;
+  line-height: .7;
+}
+
+.searchDescription {
+  font-size: 1.5vw;
+  font-family: 'Open Sans', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  color:white;
+  font-weight: 600;
+  text-shadow: 5px 3px 8px #a99999;
+}
+
+.searchForm {
+  font-family: 'titleLogo';
+  color: white;
+  font-size: 4vw;
+  font-weight: 600;
+  text-shadow: 5px 3px 8px #a99999;
+  display: flex;
+  flex-direction: column;
+  background-color: #d66354;
+  border: 2px black solid;
+  border-radius: 5px;
+  width: 650px;
+  align-items: center;
+  margin: 20px auto;
+  padding: 10px;
+  box-shadow: 4px 6px 6px 2px #b3aaaa;
+}
+
+.searchInput, .searchSubmit {
+  font-family: 'Open Sans';
+  font-weight: 600;
+  display: flex;
+  padding: 12px 12px 12px 40px;
+  margin: 5px 0;
+  background-image: url('../assets/download.png');
+  background-position: 10px 12px;
+  background-repeat: no-repeat;
+  background-size: 1em;
+  font-family: 'Open Sans', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: 19px;
+  border: 1px solid #ddd;
+  border-radius: 25px;
+  width: 80%;
+  box-shadow: 4px 6px 6px 2px #b3aaaa;
+  outline: none;
+}
+
+
+.cuisine {
+  display: flex;
+  flex-direction: row;
+  width: 80%;
+}
+#cuisine2 {
+  margin: 5px;
+}
+
+
+.searchBottom {
+  display: flex;
+  flex-direction: row;
+  margin: 0 5px;
+}
+
+.milesContainer{
+  display: flex;
+  flex-direction: row;
+  margin: 0 auto;
+  width: 100%;
+  justify-content: center;
+}
+
+.miles {
+  width: 220px;
+}
+
+.priceContainer{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: center;
+}
+
+.priceLabel {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background: whitesmoke;
+  border: 1px solid #ddd;
+  color: black;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-family: 'Open Sans';
+  font-weight: 600;
+  align-items: center;
+  font-family: 'Open Sans', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: 19px;
+  width: 55px;
+  box-shadow: 4px 6px 6px 2px #b3aaaa;
+  outline: none;
+}
+
+#priceLabel1{
+  border-top-left-radius:  25px;
+  border-bottom-left-radius: 25px;
+  margin-left: 5px;
+}
+
+#priceLabel4{
+  border-top-right-radius:  25px;
+  border-bottom-right-radius: 25px;
+  margin-right: 5px;
+}
+
+.priceCheckbox:checked + .priceLabel {
+  color: #ffffff;
+  font-weight: bold;
+  background: gray;
+}
+
+.priceCheckbox {
+  display: none;
+}
+
+.searchSubmit {
+  background-color: whitesmoke;
+  border: none;
+  color: black;
+  background-image: none;
+  text-decoration: none;
+  width: 30%;
+  cursor: pointer;
+  margin-top: 10px;
+}
 
 .holy-grail .navBar{
   display: flex;
@@ -101,7 +261,7 @@
   font-size: 1.5vw;
   font-weight: 900;
   margin-right: 15px;
-  
+  text-shadow: 5px 3px 8px #a99999;
 }
 
 .nav {
@@ -122,7 +282,7 @@
   
 }
 
-
+/* LOGIN VIEW STYLES */
 .loginContainer {
   display: flex;
   flex-direction: column;
@@ -144,7 +304,7 @@
   font-weight: 600;
   
 }
-
+/* REGISTER VIEW STYLES */
 .registerContainer {
   display: flex;
   flex-direction: column;
@@ -190,7 +350,6 @@
   width: 50%;
 }
 
-
 .registerBottom input{
   display: flex;
   flex-direction: row ;
@@ -201,16 +360,226 @@
   width: 35%;
 }
 
+/* RESTAURANT INDEX STYLES*/
 
+.yelpSearchContainer {
+  font-family: 'Open Sans';
+  color: white;
+  font-size: 1.3vw;
+  font-weight: 600;
+  text-shadow: 5px 3px 8px #a99999;
+  display: flex;
+  flex-direction: column;
+  background-color: #d66354;
+  border: 2px black solid;
+  border-radius: 5px;
+  width: 650px;
+  align-items: center;
+  margin: 20px auto;
+  padding: 10px;
+  box-shadow: 4px 6px 6px 2px #b3aaaa;
+}
+
+.yelpResultsContainer {
+  background-color: #d66354;
+  
+  
+  display: flex;
+  font-family: 'Open Sans';
+  flex-direction: column;
+  align-items: space-between;
+  color: black;
+  text-shadow: 5px 3px 8px #a99999;
+  width: 100%;
+  margin: 0 auto;
+  justify-content: center;
+  height: 100%;
+  min-height: 400px;
+  
+}
+
+.restaurantDetailMessage {
+  text-shadow: 5px 3px 8px #a99999;
+}
+
+.yelpResultsRating {
+  width: 100%;
+  
+}
+
+.yelpResults {
+  display: flex; 
+  flex-direction: column;
+  justify-content: center;
+  border: 2px black solid;
+  height: 50%;
+  width: 90%;
+  margin: 5px auto;
+  align-items: center;
+  background-color: whitesmoke;
+  box-shadow: 4px 6px 6px 2px #b3aaaa;
+ 
+}
+
+.yelpResultsAddress, .yelpResultsTelephone {
+  display: flex; 
+  flex-direction: column;
+  justify-content: center;
+  height: 15%;
+  width: 80%;
+  align-items: center;
+  background-color: whitesmoke;
+  font-weight: 700;
+  font-size: 1.1vw;
+  
+  
+}
+
+.yelpResultsName {
+  display: flex;
+  flex-direction: column;
+  
+  justify-content: center;
+  border-bottom: 2px black solid;
+  height: 38%;
+  width: 80%;
+  align-items: center;
+  background-color: whitesmoke;
+  font-weight: 900;
+  font-size: 1.4vw;
+  overflow: hidden;
+}
+
+.yelpResultsName a{
+  color:inherit;
+  transition:1s ease;
+}
+
+/* RESTAURANT DETAIL STYLES*/
+.restaurantDetailView {
+  border: black 2px solid;
+  padding: 25px;
+  background: #d66354;
+  border-radius: 5px;
+}
+
+.restaurantResultMessage{
+  font-family: 'Open Sans';
+  font-size: 1.8vw;
+}
+
+.yelpResultsDetailsContainer{
+  display: flex;
+  flex-direction: column;
+  border: 2px black solid;
+  border-radius: 5px;
+}
+
+.yelpResultsDetailsInfo {
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  align-content: space-between;
+  color: black;
+  text-shadow: 5px 3px 8px #a99999;
+  width: 100%;
+  margin: 0 auto;
+  min-height: 200px;
+  
+}
+
+.yelpResultsDetails {
+  display: flex; 
+  flex-direction: column;
+  justify-content: center;
+  
+  align-items: center;
+  background-color: whitesmoke;
+  box-shadow: 4px 6px 6px 2px #b3aaaa;
+  width: 75%;
+}
+
+.yelpResultsDetailsName {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  border-bottom: 2px black solid;
+  height: 40%;
+  width: 100%;
+  align-items: center;
+  background-color: whitesmoke;
+  font-weight: 900;
+  font-size: 2.4vw;
+  overflow: hidden;
+}
+
+
+.yelpResultsDetailsAddress, .yelpResultsDetailsTelephone {
+  display: flex; 
+  flex-direction: column;
+  justify-content: center;
+  height: 15%;
+  width: 100%;
+  align-items: center;
+  background-color: whitesmoke;
+  font-weight: 700;
+  font-size: 1.9vw;
+}
+
+.yelpResultsDetailsName a{
+  color:inherit;
+  transition:.5s ease;
+}
+
+.yelpResultsDetailsImage {
+  display: flex;
+  flex-direction: column;
+  width: 25%;
+  
+  border-left: black 2px solid;
+}
+
+.yelpResultsDetailsImage img{
+ 
+  width: 100%;
+
+}
+
+.yelpResultsDetailsRating {
+  width: 100%;
+}
+
+.yelpResultDetailReview {
+    font-family: 'Open Sans';
+    display: flex;
+    flex-direction: row;
+    border-top: black 2px solid;
+    align-content: center;
+    font-size: 1.3vw;
+    background-color: whitesmoke;
+    text-shadow: 5px 3px 8px #a99999;
+}
+
+.yelpUserReviewRating {
+  display: flex;
+  flex-direction: column;
+  font-size: 1vw;
+  padding: 5px;
+  align-items: center;
+  border-right: black 2px solid;
+}
+
+/* FOOTER STYLE */
 .holy-grail footer{
   font-family: 'titleLogo';
     font-size: 2.0em;
     text-shadow: 5px 3px 8px #a99999;
     color: white;
-  
+    
 }
 
-@media (min-width: 768px) {
+/* RESPONSIVE / MOBILE STYLE */
+@media (min-width: 968px) {
   .holy-grail-sidebar-1 {
     order: -1;
   }
@@ -218,6 +587,6 @@
     flex-direction: row;
   }
   .hg-sidebar {
-    flex: 0 0 260px;
+    flex: 0 0 200px;
   }
 }
