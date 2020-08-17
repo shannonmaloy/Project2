@@ -47,7 +47,7 @@ The following user stories:
 ## Wireframes and Schemas:
 The wireframes ![here](./wireframes_schemas/Wireframes_Project2_Restaurant_Finder.pdf). 
 
-Database Schemas (Initial - the have been slightly changed) ![here](./wireframes_schemas/initial_DV_Schema_Plans.pdf). 
+Database Schemas (Initial - the have been slightly changed) ![here](./wireframes_schemas/initial_DV_Schema_Plans.png). 
 
 ## Exposed HTML Routes:
 - /user
