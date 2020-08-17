@@ -12,12 +12,12 @@ const authRouter = require("./routes/auth-router");
 const userRouter = require("./routes/user-router");
 const authHelpers = require("./services/auth/auth-helpers");
 const restaurantRouter = require("./routes/restaurant-router");
-const restaurantHelper = require('./services/restaurant-helper')
+const restaurantHelper = require("./services/restaurant-helper");
 
 //initialize the app
 const app = express();
 //load the .env into the app
-require("dotenv").config({path: '../.env'});
+require("dotenv").config({ path: "../.env" });
 
 //middlewares
 app.use(methodOverride("_method"));
@@ -52,16 +52,13 @@ app.get("/", authHelpers.loginRedirect, (req, res) => {
     appName: "What's For Dinner",
     message: "Ok",
     success: false,
-      data: {
-        user: req.user,
-        params: req.params,
-      },
+    data: {
+      user: req.user,
+      params: req.params,
+    },
   });
 });
 
-
-
-// app.use("/restaurants", todoRouter);
 app.use("/auth", authRouter);
 app.use("/user", userRouter);
 app.use("/restaurant", restaurantRouter);

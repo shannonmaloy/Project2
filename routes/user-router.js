@@ -23,10 +23,10 @@ userRouter.get("/register", authHelpers.loginRedirect, (req, res) => {
   })
 }),
 
-userRouter.get("/profile", authHelpers.loginRequired, usersController.index, (req, res) => {
-  res.render("/user/profile", {
+userRouter.get("/profile", authHelpers.loginRequired, (req, res) => {
+  res.render("user/profile", {
     appName: "What's For Dinner",
-    message: "Put a user profile page on this route",
+    message: "OK",
     success: true,
     data: {
       user: req.user,

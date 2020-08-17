@@ -1,0 +1,25 @@
+<%- include ('../partials/boilerplate') %>
+
+
+<div class="registerContainer">
+    <p class='logo'>Enjoy Your (Dinner)</p><p class='searchDescription'>We'll save your selection for future reference.  View your previous selections in your user profile.</p>
+    <form method="POST" action="/restaurant/add">
+      <div class='registerFull'>
+          <input name="name" type="text" value=<%=restaurantDetail.name %> readonly />
+          <input name="yelpAlias" type="text" value=<%=restaurantDetail.alias %> readonly  />
+          <input name="address" type="text" value="<%=restaurantDetail.location.address1%>" readonly />
+        </div>
+      <div class='registerBottom'>
+            <input name="city" type="text" value="<%=restaurantDetail.location.city%>" readonly />
+            <input name="state" type="text" value="<%=restaurantDetail.location.state%>" readonly />
+            <input name="zipCode" type="number" value="<%=restaurantDetail.location.zip_code%>" readonly />
+    </div>
+    <div class='registerFull'>
+        <input name="notes" type="text" placeholder="Enter Notes Here"  />
+    </div>
+      <input type="submit" value="Save Dinner Choice" />
+    </form>
+  </div>
+
+
+<%- include ('../partials/end') %>

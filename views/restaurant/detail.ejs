@@ -1,0 +1,28 @@
+<%- include ('../partials/boilerplate') %>
+
+<div class="restaurantDetailView">
+        
+        <div class="yelpResultsDetailsContainer">
+            <div class='yelpResultsDetailsInfo'>
+                <div class='yelpResultsDetails'>
+                    <div class="yelpResultsDetailsName"><button onclick="goBack()">Go Back</button><a href="<%=restaurantDetail.url%>" target="_blank"><%=restaurantDetail.name%></a><form method='GET' action="/restaurant/add/<%=restaurantDetail.alias%>">
+                        <input type="submit" value="Save Choice" />
+                    </form></div>
+                    <div class="yelpResultsDetailsAddress"><%=restaurantDetail.location.address1%> <%=restaurantDetail.location.address2%> <%=restaurantDetail.location.address3%></div>
+                    <div class="yelpResultsDetailsAddress"><%=restaurantDetail.location.city%>,<%=restaurantDetail.location.state%> <%=restaurantDetail.location.zip_code%></div>
+                    <div class="yelpResultsDetailsTelephone"><%=restaurantDetail.display_phone%> | <%=restaurantDetail.price%></div>
+                    <div class="yelpResultsDetailsRating"><img class="yelpRating<%=restaurantDetail.rating%>" src="../../assets/yelp_stars/web_and_ios/regular/regular_<%=restaurantDetail.rating%>.png"></div>
+                </div>
+                <div class="yelpResultsDetailsImage">
+                    <img class="yelpRating<%=restaurantDetail.rating%>" src="<%=restaurantDetail.image_url%>">
+                </div>
+            </div>
+            <% for (let restaurant of data.restaurantReviews) { %>
+            <div class="yelpResultDetailReview">
+                <div class="yelpUserReviewRating">User Rating: <img class="yelpRating<%=restaurant.rating%>" src="../../assets/yelp_stars/web_and_ios/regular/regular_<%=restaurant.rating%>.png">%></div> 
+                <div><%=restaurant.text%><a href="<%=restaurant.url%>" target="_blank">Read more</a></div>
+            </div>
+            <% } %>
+        </div>
+</div>
+<%- include ('../partials/end') %>

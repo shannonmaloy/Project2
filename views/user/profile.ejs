@@ -1,25 +1,25 @@
 <%- include ('../partials/boilerplate') %>
 
 
-<div id='appContainer'>
-    <div id="headingContainer">
-      <div>
-      <h2>PROFILE</h1>
-      </div>
-      <div class="heading">
-        <ul class='heading'>
-          <li class='nav'><a href="/">Home</a></li>
-          <p>PROFILE: </p>>
-          <%=data.user.name%>
-          <li class='nav'><a href="/auth/logout">Logout</a></li>
-        </ul>
-      </div>
-    </div>
-    <div id='mainContainer'>
-      <p>Are you Hungry?</p>
-    </div>
+<div class="yelpSearchContainer">
+  <div class="restaurantDetailMessage">
+      <div class='restaurantResultMessage'>You're one step closer to a full belly!  Click on your results to find out more and to make your choice!</div>
+      
+  </div>
 
-</div>
+  <% if (1<0) { %>
+      <div class='yelpResultsContainer'>
+      <% for (let restaurant of data.restaurants) { %>
+              <div class='yelpResults'>
+              <div class="yelpResultsName"><a href="/restaurant/detail/<%=restaurant.alias%>"><%=restaurant.name%></a></div>
+              <div class="yelpResultsAddress"><%=restaurant.location.address1%> <%=restaurant.location.address2%> <%=restaurant.location.address3%></div>
+              <div class="yelpResultsAddress"><%=restaurant.location.city%>,<%=restaurant.location.state%> <%=restaurant.location.zip_code%></div>
+              <div class="yelpResultsTelephone"><%=restaurant.display_phone%> | <%=restaurant.price%></div>
+              <div class="yelpResultsRating"><img class="yelpRating<%=restaurant.rating%>" src="../assets/yelp_stars/web_and_ios/regular/regular_<%=restaurant.rating%>.png"></div>
+          </div>
+      <% } %>
+  </div>
+  <% } %>
 
 <script src="/src/main.js"></script>
 <script src="/src/sample.js"></script>
